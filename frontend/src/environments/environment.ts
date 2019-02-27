@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  exampleServerAddr: 'https://jsonplaceholder.typicode.com',
+  exampleServerAddress: 'https://jsonplaceholder.typicode.com',
   serverAddress: 'http://localhost:8080',
   debug: true
 };

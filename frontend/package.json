@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --delete-output-path false",
+    "buildDev": "ng build --dev --delete-output-path false",
+    "buildDevFast": "ng build --delete-output-path false --aot false --output-hashing none --source-map false --extract-css false --named-chunks false --vendor-chunk false --common-chunk false",
+    "buildDevFastMem": "node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --delete-output-path false --aot false --output-hashing none --source-map false --extract-css false --named-chunks false --vendor-chunk false --common-chunk false",
+    "buildWatch": "ng build --watch --delete-output-path false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -28,8 +32,9 @@
     "jquery": "^3.3.1",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.4.0",
+    "typescript": "^3.2.4",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "^0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.3",
