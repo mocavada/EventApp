@@ -42,7 +42,7 @@ configurations {
 dependencies {
 	// WEB
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	
+
 	// JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java'
@@ -50,7 +50,7 @@ dependencies {
 	// LOG
 	implementation group: 'commons-io', name: 'commons-io', version: '2.6'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	
+
 	// SESSION
 //	implementation 'org.springframework.session:spring-session-core'
 
@@ -59,41 +59,41 @@ dependencies {
 
 	// TEST
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	
+
 	// DEV TOOLS
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 //======== tasks for angular frontend
-node {
-	version = "11.9.0"
-	npmVersion = "6.7.0"
-	download = true
-	nodeModulesDir = file("frontend")
-}
+//node {
+//	version = "11.9.0"
+//	npmVersion = "6.7.0"
+//	download = true
+//	nodeModulesDir = file("frontend")
+//}
 
-task buildFrontEnd(type: NpmTask, dependsOn: 'npmInstall') {
-	group = 'application'
-	description = "Build and watches the client side assets for rebuilding"
-	args = ['run', 'buildDevFast']
-
-	//skip update. remove it if needed
-	nodeSetup.onlyIf {
-		!nodeSetup.nodeDir.exists()
-	}
-	npmSetup.onlyIf {
-		!npmSetup.npmDir.exists()
-	}
-	npmInstall.onlyIf {
-		!npmSetup.npmDir.exists()
-	}
-}
+//task buildFrontEnd(type: NpmTask, dependsOn: 'npmInstall') {
+//	group = 'application'
+//	description = "Build and watches the client side assets for rebuilding"
+//	args = ['run', 'buildDevFast']
+//
+//	//skip update. remove it if needed
+//	nodeSetup.onlyIf {
+//		!nodeSetup.nodeDir.exists()
+//	}
+//	npmSetup.onlyIf {
+//		!npmSetup.npmDir.exists()
+//	}
+//	npmInstall.onlyIf {
+//		!npmSetup.npmDir.exists()
+//	}
+//}
 
 //======== comment out this line, to run Spring boot without rebuild angular frontend
-bootRun.dependsOn(buildFrontEnd)
+//bootRun.dependsOn(buildFrontEnd)
 
 //======== speed boot for spring boot
-bootRun {
-	systemProperties['Xverify'] = 'none'
-	systemProperties['TieredStopAtLevel'] = '1'
-}
+//bootRun {
+//	systemProperties['Xverify'] = 'none'
+//	systemProperties['TieredStopAtLevel'] = '1'
+//}

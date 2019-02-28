@@ -7,4 +7,10 @@ export class Event {
     dateStart: Date;
     dateEnd: Date;
     dateCreated: Date;
+
+    // TEST
+    // userId: number;
+    // id: number;
+    // title: string;
+    // body: string;
 }

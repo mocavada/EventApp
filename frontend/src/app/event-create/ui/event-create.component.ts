@@ -51,6 +51,12 @@ export class EventCreateComponent implements OnInit {
       contact: '',
       dateStart: '2011-08-19T13:45:00',
       dateEnd: '2011-08-19T13:45:00',
+
+      // id: '',
+      // userId: '',
+      // title: '',
+      // body: ''
+
     });
   }
 

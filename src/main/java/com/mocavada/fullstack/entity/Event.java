@@ -7,10 +7,10 @@ import java.util.Date;
 @Table(name = "events")
 public class Event {
 
-    //    @Column(name ="event_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name ="event_id")
+    private long id;
 
     private String title;
     private String organizer;
@@ -41,11 +41,11 @@ public class Event {
         this.dateCreated = dateCreated;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
